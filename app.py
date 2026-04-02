@@ -36,8 +36,8 @@ with col1:
     age = st.number_input("Usia saat mendaftar", min_value=15, max_value=80, value=20)
 
 with col2:
-    grade_sem1 = st.slider("Nilai Rata-rata Semester 1", min_value=0.0, max_value=20.0, value=12.0, step=0.1)
-    grade_sem2 = st.slider("Nilai Rata-rata Semester 2", min_value=0.0, max_value=20.0, value=12.0, step=0.1)
+    grade_sem1 = st.slider("Beban kredit yang diambil pada Semester 1", min_value=0.0, max_value=20.0, value=12.0, step=0.1)
+    grade_sem2 = st.slider("Beban kredit yang diambil pada Semester 2", min_value=0.0, max_value=20.0, value=12.0, step=0.1)
     gender = st.selectbox("Jenis Kelamin", ["Perempuan (Female)", "Laki-laki (Male)"])
 
 # 3. Proses Prediksi
