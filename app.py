@@ -53,7 +53,7 @@ if st.button("🔍 Deteksi Risiko", type="primary"):
     # Fitur yang tidak diinput user diisi dengan nilai default (median/modus dari dataset).
     input_data = {
         'Marital status': 1, 'Application mode': 1, 'Application order': 1, 'Course': 9085,
-        'Daytime/evening attendance\t': 1, 'Previous qualification': 1, 'Previous qualification (grade)': 133.0,
+        'Daytime/evening attendance': 1, 'Previous qualification': 1, 'Previous qualification (grade)': 133.0,
         'Nacionality': 1, "Mother's qualification": 1, "Father's qualification": 1,
         "Mother's occupation": 5, "Father's occupation": 5, 'Admission grade': 127.0,
         'Displaced': 1, 'Educational special needs': 0, 'Debtor': debtor_val,
