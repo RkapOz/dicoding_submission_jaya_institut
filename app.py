@@ -49,25 +49,19 @@ if st.button("🔍 Deteksi Risiko", type="primary"):
     debtor_val = 1 if debtor == "Debitur (Yes)" else 0
     gender_val = 1 if gender == "Laki-laki (Male)" else 0
 
-    # Menyiapkan dictionary dengan 36 fitur sesuai urutan dataset asli.
-    # Fitur yang tidak diinput user diisi dengan nilai default (median/modus dari dataset).
-    input_data = {
-        'Marital status': 1, 'Application mode': 1, 'Application order': 1, 'Course': 9085,
-        'Daytime/evening attendance': 1, 'Previous qualification': 1, 'Previous qualification (grade)': 133.0,
-        'Nacionality': 1, "Mother's qualification": 1, "Father's qualification": 1,
-        "Mother's occupation": 5, "Father's occupation": 5, 'Admission grade': 127.0,
-        'Displaced': 1, 'Educational special needs': 0, 'Debtor': debtor_val,
-        'Tuition fees up to date': tuition_val, 'Gender': gender_val, 'Scholarship holder': scholar_val,
-        'Age at enrollment': age, 'International': 0,
-        'Curricular units 1st sem (credited)': 0, 'Curricular units 1st sem (enrolled)': 6,
-        'Curricular units 1st sem (evaluations)': 8, 'Curricular units 1st sem (approved)': 5,
-        'Curricular units 1st sem (grade)': grade_sem1, 'Curricular units 1st sem (without evaluations)': 0,
-        'Curricular units 2nd sem (credited)': 0, 'Curricular units 2nd sem (enrolled)': 6,
-        'Curricular units 2nd sem (evaluations)': 8, 'Curricular units 2nd sem (approved)': 5,
-        'Curricular units 2nd sem (grade)': grade_sem2, 'Curricular units 2nd sem (without evaluations)': 0,
-        'Unemployment rate': 11.1, 'Inflation rate': 0.6, 'GDP': 0.32
-    }
+    # Menyiapkan dictionary dengan 7 dari 36 fitur sesuai dengan Streamlit
+    input_data = pd.DataFrame([{
+    'Tuition fees up to date': tuition_val,
+    'Scholarship holder': scholar_val,
+    'Debtor': debtor_val,
+    'Gender': gender_val,
+    'Age at enrollment': age,
+    'Curricular units 1st sem (grade)': grade_sem1,
+    'Curricular units 2nd sem (grade)': grade_sem2
+}])
 
+# Prediksi sekarang akan 100% valid karena fitur model == fitur input
+prediction = model.predict(input_data)
     # Mengubah dictionary menjadi DataFrame dengan 1 baris
     df_input = pd.DataFrame([input_data])
 
